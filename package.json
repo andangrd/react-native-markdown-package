@@ -1,0 +1,26 @@
+{
+  "name": "react-native-markdown-package",
+  "version": "0.0.1",
+  "description": "Package for implementing markdown syntax in React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andangrd/react-native-markdown-package.git"
+  },
+  "keywords": [
+    "markdown",
+    "react",
+    "native",
+    "md",
+    "reactnative"
+  ],
+  "author": "andangrd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andangrd/react-native-markdown-package/issues"
+  },
+  "homepage": "https://github.com/andangrd/react-native-markdown-package#readme"
+}
