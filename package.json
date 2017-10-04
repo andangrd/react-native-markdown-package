@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "lodash": "^4.12.0",
-    "react-native-lightbox": "^0.6.0",
-    "simple-markdown-custom": "git://github.com/andangrd/simple-markdown.git"
+    "react-native-lightbox": "^0.7.0",
+    "simple-markdown": "git://github.com/andangrd/simple-markdown.git"
   },
   "repository": {
     "type": "git",
