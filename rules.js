@@ -8,7 +8,7 @@ import {
 
 import Lightbox from 'react-native-lightbox';
 
-import SimpleMarkdown from 'simple-markdown-custom';
+import SimpleMarkdown from 'simple-markdown';
 import _ from 'lodash';
 
 module.exports = function(styles, opts = {}) {
