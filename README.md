@@ -11,10 +11,12 @@ Package for implementing markdown syntax in React Native. Contribution, Pull Req
 
 ## Usage
 
-What you need is to `import` the `react-native-markdown-package` module and then use the
+What you need to do is `import` the `react-native-markdown-package` module and then use the
 `<Markdown/>` tag.
 
-here is simple implementation :
+How to use? 
+
+Here we are, take a look at this simple implementation:
 
 ```javascript
 /**
