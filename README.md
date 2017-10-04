@@ -111,7 +111,7 @@ AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 
 ```
 
-![alt text](https://pasteboard.co/GNoMNc7.png)
+<img src="https://github.com/andangrd/rn-markdown-example/blob/master/assets/images/example.png" width="200">
 
 ## Properties
 
