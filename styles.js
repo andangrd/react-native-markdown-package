@@ -1,4 +1,6 @@
-module.export = {
+import { Dimensions } from 'react-native';
+
+export default {
     autolink: {
       color: 'blue',
     },
@@ -158,7 +160,7 @@ module.export = {
     },
     u: {
       borderColor: '#222222',
-      //borderBottomWidth: 1,
+      borderBottomWidth: 1,
     },
   };
   

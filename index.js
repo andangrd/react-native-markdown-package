@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import { View, 
-  Dimensions, } from 'react-native';
+import { View } from 'react-native';
 import _ from 'lodash';
-import SimpleMarkdown from 'simple-markdown-custom';
+import SimpleMarkdown from 'simple-markdown';
 import styles from './styles';
 
 class Markdown extends Component {
@@ -50,9 +49,7 @@ class Markdown extends Component {
 
     const tree = this.parse(child);
 
-    return (<View style={[styles.view, this.props.styles.view]}>
-              { this.renderer(tree) }
-    </View>);
+    return <View style={[styles.view, this.props.styles.view]}> { this.renderer(tree) } </View>;
   }
 }
 
