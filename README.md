@@ -1,5 +1,5 @@
 # react-native-markdown-package
-Node Module Package for implementing markdown syntax in React Native. Contribution, Pull Request, or anything else from you guys will be really appreciated. :)
+Node Module Package for implementing markdown syntax in React Native. I knew this is not a perfect package, so your contribution, Pull Request, or anything else from you guys will be really appreciated. :)
 
 ## Getting started
 
