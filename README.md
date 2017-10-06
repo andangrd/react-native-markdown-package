@@ -159,10 +159,10 @@ this project was actually forked from [lwansbrough](https://github.com/lwansbrou
  1. Styling method.
     
     Now you can easily add styling on each syntax, e.g. add different color either in `strong`, `header`, or another md syntax. All default styles in this package is also already moved to new file `styles.js`.
- 2. Refactoring some codes to adopt ES6 style
+ 2. Refactoring some codes to adopt ES6 style.
     
     Refactor index.js using ES6. :)
- 3. Support `Sublist`
+ 3. Support `Sublist`.
     
     In the previous library, you couldn't add sublist. It was not supported. But now, this feature already added here. Please follow the instruction above... 
     
