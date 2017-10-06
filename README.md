@@ -156,8 +156,8 @@ Default style properties will be applied to the markdown. You will likely want t
 
 this project was actually forked from [lwansbrough](https://github.com/lwansbrough) , [gijoehosaphat](https://github.com/gijoehosaphat) and imported a parser library which forked from 
 [Khan](https://github.com/Khan) with some enhancements below :
- 1. styling method
-    
+ 1. Styling method.
+    
     Now you can easily add styling on each syntax, e.g. add different color either in `strong`, `header`, or another md syntax. All default styles in this package is also already moved to new file `styles.js`.
  2. Refactoring some codes to adopt ES6 style
     
