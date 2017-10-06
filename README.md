@@ -163,8 +163,8 @@ this project was actually forked from [lwansbrough](https://github.com/lwansbrou
     
     Refactor index.js using ES6. :)
  3. Support `Sublist`.
- 
- In the previous library, you couldn't add sublist. It was not supported. But now, this feature already added here. Please follow the instruction above... 
+    
+    In the previous library, you couldn't add sublist. It was not supported. But now, this feature already added here. Please follow the instruction above... 
     
 
 Happy Coding... ;)
