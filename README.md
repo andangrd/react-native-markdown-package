@@ -1,5 +1,5 @@
 # react-native-markdown-package
-Node Module Package for implementing markdown syntax in React Native. I knew this is not a perfect package, so your contribution, Pull Request, or anything else from you guys will be really appreciated. :)
+Node Module Package for implementing markdown syntax in React Native. I knew this is not a perfect library, so your contribution, Pull Request, or anything else from you guys will be really appreciated. :)
 
 ## Getting started
 
@@ -154,6 +154,14 @@ Default style properties will be applied to the markdown. You will likely want t
 
 ## Thanks To
 
-Special thanks to: 
+this project was actually forked from [lwansbrough](https://github.com/lwansbrough) , [gijoehosaphat](https://github.com/gijoehosaphat) and imported a parser library which forked from 
+[Khan](https://github.com/Khan) with some enhancements below :
+ 1. styling method
+    Now you can easily add styling on each syntax, e.g. add different color either in `strong`, `header`, or another md syntax. All default styles in this package is also already moved to new file `styles.js`.
+ 2. Refactoring some codes to adopt ES6 style
+    Refactor index.js using ES6. :)
+ 3. Support `Sublist`
+    In the previous library, you couldn't add sublist. It was not supported. But now, this feature already added here. Please follow the instruction above... 
+    
 
-[lwansbrough](https://github.com/lwansbrough) , [gijoehosaphat](https://github.com/gijoehosaphat) , [Khan](https://github.com/Khan) 
+Happy Coding... ;)
