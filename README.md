@@ -5,11 +5,11 @@ Node Module Package for implementing markdown syntax in React Native. I knew thi
 
 To install this library, you can do in two different ways. Check this out :
 
-1. Run this following command in your project folder.
+1. Run this command in your project folder.
 
     `npm i react-native-markdown-package --save`
     
-2. **OR** Update manually your `dependencies` in package.json by adding this line, then run `npm install`  
+2. **OR** Update manually your `dependencies` in package.json by adding this following line, afterwards run `npm install` 
 
     `"react-native-markdown-package": "git+https://github.com/andangrd/react-native-markdown-package.git"`
 
