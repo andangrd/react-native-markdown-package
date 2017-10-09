@@ -9,11 +9,9 @@ To install this library, you can do in two different ways. Check this out :
 
     `npm i react-native-markdown-package --save`
     
-2. **OR** Update manually your `dependencies` in package.json by adding this line
+2. **OR** Update manually your `dependencies` in package.json by adding this line, then run `npm install`  
 
-    `"react-native-markdown-package": "git+https://github.com/andangrd/react-native-markdown-package.git"` 
-    
-    then run `npm install`
+    `"react-native-markdown-package": "git+https://github.com/andangrd/react-native-markdown-package.git"`
 
 ## Usage
 
