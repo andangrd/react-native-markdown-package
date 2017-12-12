@@ -117,6 +117,8 @@ AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 
 ```
 
+check this simple app for implementation example [Example app] (https://github.com/andangrd/rn-markdown-example)
+
 <img src="https://github.com/andangrd/rn-markdown-example/blob/master/assets/images/example.png" width="250">
 
 ## Properties
@@ -169,6 +171,7 @@ this project was actually forked from [lwansbrough](https://github.com/lwansbrou
  3. Support `Sublist`.
     
     In the previous library, you couldn't add sublist. It was not supported. But now, this feature already added here. Please follow the instruction above... 
+ 4. Latest release, add Proptypes Support.
     
 
 Happy Coding... ;)
