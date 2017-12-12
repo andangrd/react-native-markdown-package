@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { View } from 'react-native';
 import _ from 'lodash';
+import PropTypes from 'prop-types';
 import SimpleMarkdown from 'simple-markdown';
 import styles from './styles';
 
