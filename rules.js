@@ -9,7 +9,7 @@ import {
 import Lightbox from 'react-native-lightbox';
 
 import SimpleMarkdown from 'simple-markdown';
-import _ from 'lodash';
+import { map, includes, head, noop, some, size  } from 'lodash';
 
 module.exports = function(styles, opts = {}) {
   const enableLightBox = opts.enableLightBox || false;
@@ -56,7 +56,7 @@ module.exports = function(styles, opts = {}) {
           key: state.key,
           style: styles.blockQuote,
         }, output(node.content, state));
-        const image = _.get(opts, ['bgImage', 'blockQuote']);
+        const image = get(opts, ['bgImage', 'blockQuote']);
         if (image) {
           const img = React.createElement(Image, {
             key: 1,
@@ -188,7 +188,7 @@ module.exports = function(styles, opts = {}) {
     list: {
       react: function(node, output, {...state}) {
         var numberIndex = 1;
-        var items = _.map(node.items, function(item, i) {
+        var items = map(node.items, function(item, i) {
           var bullet;
           if (node.ordered) {
             bullet = React.createElement(Text, { key: 0, style: styles.listItemNumber }, (numberIndex) + '. ');
@@ -205,7 +205,7 @@ module.exports = function(styles, opts = {}) {
           var content = output(item, state);
           var listItem;
           state.withinList = true;
-          if (_.includes(['text', 'paragraph', 'strong'], (_.head(item) || {}).type)) {
+          if (includes(['text', 'paragraph', 'strong'], (head(item) || {}).type)) {
             listItem = React.createElement(Text, {
               style: styles.listItemText,
               key: 1,
@@ -231,7 +231,7 @@ module.exports = function(styles, opts = {}) {
     sublist: {
       react: function(node, output, {...state}) {
 
-        var items = _.map(node.items, function(item, i) {
+        var items = map(node.items, function(item, i) {
           var bullet;
           if (node.ordered) {
             bullet = React.createElement(Text, { key: 0, style: styles.listItemNumber }, (i + 1) + '. ');
@@ -243,7 +243,7 @@ module.exports = function(styles, opts = {}) {
           var content = output(item, state);
           var listItem;
           state.withinList = true;
-          if (_.includes(['text', 'paragraph', 'strong'], (_.head(item) || {}).type)) {
+          if (includes(['text', 'paragraph', 'strong'], (head(item) || {}).type)) {
             listItem = React.createElement(Text, {
               style: styles.listItemText,
               key: 1,
@@ -270,7 +270,7 @@ module.exports = function(styles, opts = {}) {
         return React.createElement(Text, {
           key: state.key,
           style: styles.mailto,
-          onPress: _.noop,
+          onPress: noop,
         }, output(node.content, state));
       },
     },
@@ -286,7 +286,7 @@ module.exports = function(styles, opts = {}) {
       react: function(node, output, {...state}) {
         let paragraphStyle = styles.paragraph;
         // Allow image to drop in next line within the paragraph
-        if (_.some(node.content, {type: 'image'})) {
+        if (some(node.content, {type: 'image'})) {
           state.withinParagraphWithImage = true;
           var paragraph = React.createElement(View, {
             key: state.key,
@@ -294,7 +294,7 @@ module.exports = function(styles, opts = {}) {
           }, output(node.content, state));
           state.withinParagraphWithImage = false;
           return paragraph;
-        } else if (_.size(node.content) < 3 && _.some(node.content, {type: 'strong'})){
+        } else if (size(node.content) < 3 && some(node.content, {type: 'strong'})){
           // align to center for Strong only content
           // require a check of content array size below 3,
           // as parse will include additional space as `text`
@@ -324,7 +324,7 @@ module.exports = function(styles, opts = {}) {
     },
     table: {
       react: function(node, output, {...state}) {
-        var headers = _.map(node.header, function(content, i) {
+        var headers = map(node.header, function(content, i) {
           return React.createElement(Text, {
             key: i,
             style: styles.tableHeaderCell,
@@ -333,8 +333,8 @@ module.exports = function(styles, opts = {}) {
 
         var header = React.createElement(View, { key: -1, style: styles.tableHeader }, headers);
 
-        var rows = _.map(node.cells, function(row, r) {
-          var cells = _.map(row, function(content, c) {
+        var rows = map(node.cells, function(row, r) {
+          var cells = map(row, function(content, c) {
             return React.createElement(View, {
               key: c,
               style: styles.tableRowCell,
