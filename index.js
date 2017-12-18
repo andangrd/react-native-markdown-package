@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, ViewPropTypes } from 'react-native';
 import { merge, isEqual, isArray } from 'lodash';
 import PropTypes from 'prop-types';
 import SimpleMarkdown from 'simple-markdown';
@@ -61,7 +61,7 @@ Markdown.propTypes = {
   onImageClose: PropTypes.func,
   onLoad: PropTypes.func,
   styles: PropTypes.shape({
-    view: View.propTypes.style,
+    view: ViewPropTypes.style,
   }),
 };
 
