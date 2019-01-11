@@ -173,6 +173,8 @@ I'm very thankful to contributors who help me to make this libary better, and al
     * Fix deprecated View.proptypes and update Readme (1.0.3)
     
     * Upgrade dependency, lodash, avoid vulnerabilities (1.1.0)
+
+    * Fix performance issue, import only necessarry function from lodash (1.1.1)
     
 
 Happy Coding... ;)
