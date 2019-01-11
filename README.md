@@ -3,15 +3,10 @@ Node Module Package for implementing markdown syntax in React Native. I knew thi
 
 ## Getting started
 
-To install this library, you can do in two different ways. Check this out :
-
-1. Run this command in your project folder.
+To install this library, you can easily run this command from your project folder.
 
     `npm i react-native-markdown-package --save`
-    
-2. **OR** Update manually your `dependencies` in package.json by adding this following line, afterwards run `npm install` 
 
-    `"react-native-markdown-package": "git+https://github.com/andangrd/react-native-markdown-package.git"`
 
 ## Usage
 
@@ -117,7 +112,7 @@ AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 
 ```
 
-check this simple app for implementation example [Example app] (https://github.com/andangrd/rn-markdown-example)
+check this simple app for implementation example [Example app](https://github.com/andangrd/rn-markdown-example)
 
 <img src="https://github.com/andangrd/rn-markdown-example/blob/master/assets/images/example.png" width="250">
 
@@ -160,7 +155,7 @@ Default style properties will be applied to the markdown. You will likely want t
 
 ## Thanks To
 
-this project was actually forked from [lwansbrough](https://github.com/lwansbrough) , [gijoehosaphat](https://github.com/gijoehosaphat) and imported a parser library which forked from 
+I'm very thankful to contributors who help me to make this libary better, and also this project was actually forked from [lwansbrough](https://github.com/lwansbrough) , [gijoehosaphat](https://github.com/gijoehosaphat) and imported a parser library which forked from 
 [Khan](https://github.com/Khan) with some enhancements below :
  1. Styling method.
     
@@ -171,7 +166,13 @@ this project was actually forked from [lwansbrough](https://github.com/lwansbrou
  3. Support `Sublist`.
     
     In the previous library, you couldn't add sublist. It was not supported. But now, this feature already added here. Please follow the instruction above... 
- 4. Latest release, add Proptypes Support.
+ 4. Latest release: 
+
+    * add Proptypes Support, (1.0.1)
+
+    * Fix deprecated View.proptypes and update Readme (1.0.3)
+    
+    * Upgrade dependency, lodash, avoid vulnerabilities (1.1.0)
     
 
 Happy Coding... ;)

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import _ from 'lodash';
+import { View, ViewPropTypes } from 'react-native';
+import { merge, isEqual, isArray } from 'lodash';
 import PropTypes from 'prop-types';
 import SimpleMarkdown from 'simple-markdown';
 import styles from './styles';
@@ -21,9 +21,9 @@ class Markdown extends Component {
       onImageClose: this.props.onImageClose,
     };
 
-    const mergedStyles = _.merge({}, styles, this.props.styles);
+    const mergedStyles = merge({}, styles, this.props.styles);
     var rules = require('./rules')(mergedStyles, opts);
-    rules = _.merge({}, SimpleMarkdown.defaultRules, rules);
+    rules = merge({}, SimpleMarkdown.defaultRules, rules);
 
     const parser = SimpleMarkdown.parserFor(rules);
     this.parse = function(source) {
@@ -40,11 +40,11 @@ class Markdown extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return !_.isEqual(nextProps.children, this.props.children);
+    return !isEqual(nextProps.children, this.props.children);
   }
 
   render() {
-    const child = _.isArray(this.props.children) 
+    const child = isArray(this.props.children) 
                 ? this.props.children.join('') 
                 : this.props.children;
 
@@ -61,7 +61,7 @@ Markdown.propTypes = {
   onImageClose: PropTypes.func,
   onLoad: PropTypes.func,
   styles: PropTypes.shape({
-    view: View.propTypes.style,
+    view: ViewPropTypes.style,
   }),
 };
 
