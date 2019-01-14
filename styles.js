@@ -4,6 +4,18 @@ export default {
     autolink: {
       color: 'blue',
     },
+    blockQuoteText: {
+      color: 'grey'
+    },
+    blockQuoteSection: {
+      flexDirection: 'row',
+    },
+    blockQuoteSectionBar: {
+      width: 3,
+      height: null,
+      backgroundColor: '#DDDDDD',
+      marginRight: 15,
+    },
     bgImage: {
       flex: 1,
       position: 'absolute',

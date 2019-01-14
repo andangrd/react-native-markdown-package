@@ -52,24 +52,23 @@ module.exports = function(styles, opts = {}) {
     blockQuote: {
       react: function(node, output, {...state}) {
         state.withinQuote = true;
+        
+        const img = React.createElement(View, {
+          key: state.key-state.key,
+          style: [styles.blockQuoteSectionBar, styles.blockQuoteBar],
+        });
+
         let blockQuote = React.createElement(Text, {
           key: state.key,
-          style: styles.blockQuote,
+          style: styles.blockQuoteText,
         }, output(node.content, state));
-        const image = get(opts, ['bgImage', 'blockQuote']);
-        if (image) {
-          const img = React.createElement(Image, {
-            key: 1,
-            resizeMode: 'cover',
-            source: image,
-            style: styles.bgImage,
-          });
-          return React.createElement(View, {
-            key: state.key,
-            style: styles.bgImageView,
-          }, [img, blockQuote]);
-        }
-        return blockQuote;
+
+
+        return React.createElement(View, {
+          key: state.key,
+          style: [styles.blockQuoteSection, styles.blockQuoteText],
+        }, [img, blockQuote]);
+      
       },
     },
     br: {
@@ -359,6 +358,10 @@ module.exports = function(styles, opts = {}) {
         
         if (state.withinLink) {
           textStyle = [styles.text, styles.autolink];
+        }
+
+        if(state.withinQuote) {
+          textStyle = [styles.text, styles.blockQuoteText];
         }
         
         return React.createElement(Text, {
