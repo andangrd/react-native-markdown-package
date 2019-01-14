@@ -177,6 +177,8 @@ I'm very thankful to contributors who help me to make this libary better, and al
     * Fix performance issue, import only necessarry function from lodash (1.1.1)
 
     * Finalize Blockquote feature (1.2.0)
+
+    * Update Docs (1.2.1)
     
 
 Happy Coding... ;)
