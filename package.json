@@ -10,7 +10,7 @@
     "lodash": "^4.17.11",
     "prop-types": "^15.6.0",
     "react-native-lightbox": "^0.7.0",
-    "simple-markdown": "git://github.com/andangrd/simple-markdown.git"
+    "simple-markdown": "^0.4.2"
   },
   "repository": {
     "type": "git",
