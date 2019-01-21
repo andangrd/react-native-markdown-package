@@ -186,11 +186,9 @@ module.exports = function(styles, opts = {}) {
     },
     list: {
       react: function(node, output, {...state}) {
-
-        console.log('it goes here', node, output, state)
+'
         var numberIndex = 1;
         var items = map(node.items, function(item, i) {
-          console.log('item', item)
           var bullet;
           if (node.ordered) {
             bullet = React.createElement(Text, { key: 0, style: styles.listItemNumber }, (numberIndex) + '. ');
@@ -200,11 +198,8 @@ module.exports = function(styles, opts = {}) {
           }
 
           if(item.length > 1) {
-            console.log('item has more than one value')
             if(item[1].type == 'list') {
-              // numberIndex = numberIndex-1;
               state.withinList = true;
-              // bullet = React.createElement(Text, { key: 0, style: styles.listItemBullet }, '');
             }
           }
 
@@ -213,14 +208,12 @@ module.exports = function(styles, opts = {}) {
           var content = output(item, state);
           var listItem;
           if (includes(['text', 'paragraph', 'strong'], (head(item) || {}).type) && state.withinList == false) {
-            console.log('content', content)
             state.withinList = true;
             listItem = React.createElement(Text, {
               style: [styles.listItemText, { marginBottom: 0 }],
               key: 1,
             }, content);
           } else {
-            console.log('wow, it goes here')
             listItem = React.createElement(View, {
               style: styles.listItemText,
               key: 1,
