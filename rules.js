@@ -186,6 +186,7 @@ module.exports = function(styles, opts = {}) {
     },
     list: {
       react: function(node, output, {...state}) {
+'
         var numberIndex = 1;
         var items = map(node.items, function(item, i) {
           var bullet;
@@ -196,22 +197,25 @@ module.exports = function(styles, opts = {}) {
             bullet = React.createElement(Text, { key: 0, style: styles.listItemBullet }, '\u2022 ');
           }
 
-          if(item[0].type == 'sublist') {
-            numberIndex = numberIndex-1;
-            bullet = React.createElement(Text, { key: 0, style: styles.listItemBullet }, '');
+          if(item.length > 1) {
+            if(item[1].type == 'list') {
+              state.withinList = true;
+            }
           }
+
+          
 
           var content = output(item, state);
           var listItem;
-          state.withinList = true;
-          if (includes(['text', 'paragraph', 'strong'], (head(item) || {}).type)) {
+          if (includes(['text', 'paragraph', 'strong'], (head(item) || {}).type) && state.withinList == false) {
+            state.withinList = true;
             listItem = React.createElement(Text, {
-              style: styles.listItemText,
+              style: [styles.listItemText, { marginBottom: 0 }],
               key: 1,
             }, content);
           } else {
             listItem = React.createElement(View, {
-              style: styles.listItem,
+              style: styles.listItemText,
               key: 1,
             }, content);
           }
