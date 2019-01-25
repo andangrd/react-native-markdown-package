@@ -1,4 +1,4 @@
-# react-native-markdown-package
+# React Native Markdown Package
 React Native Markdown Package is a library for implementing markdown syntax in React Native. I knew this is not a perfect library, so your contribution, Pull Request, or anything else from you guys will be really appreciated. :)
 
 ## Getting started
@@ -146,43 +146,11 @@ check this simple app for implementation example [Example app](https://github.co
 
 #### `styles`
 
-Default style properties will be applied to the markdown. You will likely want to customize these styles, the following properties can be used to modify the rendered elements:
-
-*Note: The text inside the parentheses denotes the element type.*
-
-- `autolink` (`<Text>`) - WIP
-- `blockQuote` (`<Text>`) 
-- `br` (`<Text>`)
-- `codeBlock` (`<View>`) - WIP
-- `del` (`<Text>`)
-- `em` (`<Text>`)
-- `heading` (`<Text>`) - Also `heading1` through `heading6`
-- `hr` (`<View>`)
-- `image` (`<Image>`) - Implemented but size is fixed to `50x50` until auto width is supported by React Native.
-- `inlineCode` (`<Text>`)
-- `link` (`<Text>`) - WIP
-- `list` (`<View>`) - Also `sublist` (`<View>`), `listItem` (`<View>`), `listItemBullet` (`<Text>`) and `listItemNumber` (`<Text>`)
-- `sublist` (`<View`) - Also `listItem` (`<View>`), `listItemBullet` (`<Text>`) and `listItemNumber` (`<Text>`)
-- `mailto` (`<Text>`) - WIP
-- `newline` (`<Text>`) - WIP
-- `paragraph` (`<View>`)
-- `plainText` (`<Text>`) - Use for styling text without any associated styles
-- `strong` (`<Text>`)
-- `table` (`<View>`)
-- `tableHeader` (`<View>`)
-- `tableHeaderCell` (`<Text>`)
-- `tableRow` (`<View>`)
-- `tableRowCell` (`<View>`)
-- `tableRowLast` (`<View>`, inherits from `tableRow`)
-- `text` (`<Text>`) - Inherited by all text based elements
-- `u` (`<View>`)
-- `url` (`<Text>`)
-- `view` (`<View>`) - This is the container `View` that the Markdown is rendered in.
+Default style properties will be applied to the markdown. You will likely want to customize these styles, the following properties can be used to modify the rendered elements.
 
 ## Thanks To
 
-I'm very thankful to contributors who help me to make this libary better, and also this project was actually forked from [lwansbrough](https://github.com/lwansbrough) , [gijoehosaphat](https://github.com/gijoehosaphat) and imported a parser library which forked from 
-[Khan](https://github.com/Khan) with some enhancements below :
+I'm very thankful to contributors who help me to make this libary better, and also this project was actually forked from [lwansbrough](https://github.com/lwansbrough) , with some enhancements below :
  1. Styling method.
     
     Now you can easily add styling on each syntax, e.g. add different color either in `strong`, `header`, or another md syntax. All default styles in this package is also already moved to new file `styles.js`.
@@ -206,7 +174,7 @@ I'm very thankful to contributors who help me to make this libary better, and al
 
     * Update Docs (1.2.1)
 
-    * Allow user to include plain text from variable using back tick (1.3.0)
+    * Allow user to include plain text from variable using back tick (1.3.x)
     
 
 Happy Coding... ;)
