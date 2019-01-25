@@ -186,7 +186,6 @@ module.exports = function(styles, opts = {}) {
     },
     list: {
       react: function(node, output, {...state}) {
-'
         var numberIndex = 1;
         var items = map(node.items, function(item, i) {
           var bullet;
