@@ -33,6 +33,36 @@ import {
   View
 } from 'react-native';
 
+const text = `
+# This is Heading 1
+## This is Heading 2
+1. List1
+2. List2
+  This is a description for List2 .\n
+  * test
+  * test
+3. List3
+4. List4
+
+Below is some example to print blockquote
+
+> Test block Quote
+> Another  block Quote
+
+this is _italic_ 
+this is **strong**
+Some *really* basic **Markdown**.
+
+## this is header 
+
+| # | Name   | Age 
+|---|--------|-----|
+| 1 | John   | 19  |
+| 2 | Sally  | 18  |
+| 3 | Stream | 20  |
+` ;
+
+
 export default class AwesomeProject extends Component {
   render() {
     return (
@@ -40,32 +70,9 @@ export default class AwesomeProject extends Component {
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
+
         <Markdown styles={styles.markdown} >
-          # This is Heading 1{'\n\n'}
-          ## This is Heading 2{'\n\n'}
-          1. List1 {'\n'}
-          2. List2 {'\n'} 
-          {'\t'}1. sublist1{'\n'}
-          {'\t'}description sublist1.{'\n'}
-          {'\t'}2. sublist2{'\t\t'}{'\n'}
-          * List3{'\n'}
-          * List4{'\n'}
-          {'\t'}1. **bold text** {'\n'}
-          {'\t'}2. this line contain * and should not be a new sublist{'\t\t'}{'\n'}
-          5.  Last list{'\n\n'}
-          Some *really* basic **Markdown**.{'\n\n'}
-
-
-          ## this is header {'\n\n\n\n'}
-          {'this is _italic_ '}
-          {'this is **strong**'}
-
-          {'\n\n'}
-          | # | Name   | Age |{'\n'}
-          |---|--------|-----|{'\n'}
-          | 1 | John   | 19  |{'\n'}
-          | 2 | Sally  | 18  |{'\n'}
-          | 3 | Stream | 20  |{'\n'}
+          { text } 
         </Markdown>
       </View>
     );
@@ -103,8 +110,27 @@ const styles = {
       color: 'cyan'
     },
     text: {
-      color: 'magenta',
-    }
+      color: 'black',
+    },
+    blockQuoteText: {
+      color: 'grey'
+    },
+    blockQuoteSection: {
+      flexDirection: 'row',
+    },
+    blockQuoteSectionBar: {
+      width: 3,
+      height: null,
+      backgroundColor: '#DDDDDD',
+      marginRight: 15,
+    },
+    codeBlock: {
+      fontFamily: 'Courier',
+      fontWeight: '500',
+    },
+    tableHeader: {
+      backgroundColor: 'grey',
+    },
   }
 };
 
@@ -125,7 +151,7 @@ Default style properties will be applied to the markdown. You will likely want t
 *Note: The text inside the parentheses denotes the element type.*
 
 - `autolink` (`<Text>`) - WIP
-- `blockQuote` (`<Text>`) - WIP
+- `blockQuote` (`<Text>`) 
 - `br` (`<Text>`)
 - `codeBlock` (`<View>`) - WIP
 - `del` (`<Text>`)
@@ -179,6 +205,8 @@ I'm very thankful to contributors who help me to make this libary better, and al
     * Finalize Blockquote feature (1.2.0)
 
     * Update Docs (1.2.1)
+
+    * Allow user to include plain text from variable using back tick (1.3.0)
     
 
 Happy Coding... ;)
