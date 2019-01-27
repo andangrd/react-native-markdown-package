@@ -1,5 +1,5 @@
 # React Native Markdown Package
-React Native Markdown Package is a library for implementing markdown syntax in React Native. I knew this is not a perfect library, so your contribution, Pull Request, or anything else from you guys will be really appreciated. :)
+React Native Markdown Package is a library for implementing markdown syntax in React Native.
 
 ## Getting started
 
@@ -8,7 +8,7 @@ To install this library, you can easily run this command from your project folde
     `npm i react-native-markdown-package --save`
 
 
-## Usage
+## How to use
 
 What you need to do is `import` the `react-native-markdown-package` module and then use the
 `<Markdown/>` tag.
@@ -38,11 +38,28 @@ const text = `
 ## This is Heading 2
 1. List1
 2. List2
-  This is a description for List2 .\n
+  This is a \`description\`  for List2 .\n
   * test
   * test
 3. List3
-4. List4
+4. List4.
+
+
+You can also put some url as a link [like This](https://this.isurl.com) or write it as a plain text:
+  https://this.isurl.com
+  <thisis@email.com>
+
+---
+
+This text should be printed between horizontal rules
+
+---
+
+The following code is an example for codeblock:
+
+    const a = function() {
+      runSomeFunction()
+    };
 
 Below is some example to print blockquote
 
@@ -53,7 +70,6 @@ this is _italic_
 this is **strong**
 Some *really* basic **Markdown**.
 
-## this is header 
 
 | # | Name   | Age 
 |---|--------|-----|
@@ -62,18 +78,17 @@ Some *really* basic **Markdown**.
 | 3 | Stream | 20  |
 ` ;
 
-
-export default class AwesomeProject extends Component {
+export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-
-        <Markdown styles={styles.markdown} >
-          { text } 
-        </Markdown>
+          <Text style={styles.welcome}>
+            Welcome to React Native!
+          </Text>
+          <Markdown styles={styles.markdown} >
+            { text } 
+          </Markdown>
+        
       </View>
     );
   }
@@ -85,11 +100,12 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    margin: 10,
+    padding:20
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
   },
   instructions: {
     textAlign: 'center',
@@ -127,6 +143,7 @@ const styles = {
     codeBlock: {
       fontFamily: 'Courier',
       fontWeight: '500',
+      backgroundColor: '#DDDDDD',
     },
     tableHeader: {
       backgroundColor: 'grey',
@@ -134,19 +151,20 @@ const styles = {
   }
 };
 
+
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 
 ```
 
 check this simple app for implementation example [Example app](https://github.com/andangrd/rn-markdown-example)
 
-<img src="https://raw.githubusercontent.com/andangrd/rn-markdown-example/master/assets/images/example1.png" width="250">
+<img src="https://raw.githubusercontent.com/andangrd/rn-markdown-example/master/assets/images/example-2.png" width="250">
 
 ## Properties
 
 #### `styles`
 
-Default style properties will be applied to the markdown. You will likely want to customize these styles, the following properties can be used to modify the rendered elements.
+Default style properties will be applied to the markdown. You could replace it with your preference by adding `styles` property like the example above.
 
 ## Thanks To
 
@@ -174,7 +192,9 @@ I'm very thankful to contributors who help me to make this libary better, and al
 
     * Update Docs (1.2.1)
 
-    * Allow user to include plain text from variable using back tick (1.3.x)
+    * Allow user to include plain text from variable using back tick (1.3.3)
+
+    * New feature, codeblock (1.4.0)
     
 
 Happy Coding... ;)
