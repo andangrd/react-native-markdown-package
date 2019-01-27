@@ -158,7 +158,7 @@ AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 
 check this simple app for implementation example [Example app](https://github.com/andangrd/rn-markdown-example)
 
-<img src="https://raw.githubusercontent.com/andangrd/rn-markdown-example/master/assets/images/example1.png" width="250">
+<img src="https://raw.githubusercontent.com/andangrd/rn-markdown-example/master/assets/images/example-2.png" width="250">
 
 ## Properties
 
