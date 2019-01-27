@@ -164,7 +164,7 @@ check this simple app for implementation example [Example app](https://github.co
 
 #### `styles`
 
-Default style properties will be applied to the markdown. You could replace the default style with your preference by adding `style` property like the example above.
+Default style properties will be applied to the markdown. You could replace it with your preference by adding `styles` property like the example above.
 
 ## Thanks To
 
