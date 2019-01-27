@@ -8,6 +8,11 @@ To install this library, you can easily run this command from your project folde
     `npm i react-native-markdown-package --save`
 
 
+Check this simple app for implementation example [Example app](https://github.com/andangrd/rn-markdown-example)
+
+<img src="https://raw.githubusercontent.com/andangrd/rn-markdown-example/master/assets/images/example-2.png" width="250">
+
+
 ## How to use
 
 What you need to do is `import` the `react-native-markdown-package` module and then use the
@@ -155,10 +160,6 @@ const styles = {
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 
 ```
-
-check this simple app for implementation example [Example app](https://github.com/andangrd/rn-markdown-example)
-
-<img src="https://raw.githubusercontent.com/andangrd/rn-markdown-example/master/assets/images/example-2.png" width="250">
 
 ## Properties
 
