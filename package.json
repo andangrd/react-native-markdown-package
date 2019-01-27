@@ -17,9 +17,9 @@
     "url": "git+https://github.com/andangrd/react-native-markdown-package.git"
   },
   "keywords": [
-    "markdown",
     "react",
     "native",
+    "markdown",
     "md",
     "reactnative"
   ],

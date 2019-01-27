@@ -85,7 +85,7 @@ module.exports = function(styles, opts = {}) {
         return React.createElement(Text, {
           key: state.key,
           style: styles.codeBlock,
-        }, null);
+        }, node.content);
       },
     },
     del: {
