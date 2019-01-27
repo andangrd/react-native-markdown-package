@@ -8,7 +8,7 @@ To install this library, you can easily run this command from your project folde
     `npm i react-native-markdown-package --save`
 
 
-## Usage
+## How to use
 
 What you need to do is `import` the `react-native-markdown-package` module and then use the
 `<Markdown/>` tag.
