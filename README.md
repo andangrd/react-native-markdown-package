@@ -35,7 +35,8 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Linking
 } from 'react-native';
 
 const text = `
@@ -50,9 +51,9 @@ const text = `
 4. List4.
 
 
-You can also put some url as a link [like This](https://this.isurl.com) or write it as a plain text:
-  https://this.isurl.com
-  <thisis@email.com>
+You can also put some url as a link [like This](https://www.google.com) or write it as a plain text:
+  https://www.google.com
+  <mailme@gmail.com>
 
 ---
 
@@ -90,7 +91,10 @@ export default class App extends Component<{}> {
           <Text style={styles.welcome}>
             Welcome to React Native!
           </Text>
-          <Markdown styles={styles.markdown} >
+          <Markdown 
+            styles={styles.markdown} 
+            onLink={(url) => Linking.openURL(url)}
+          >
             { text } 
           </Markdown>
         

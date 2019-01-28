@@ -20,7 +20,10 @@ module.exports = function(styles, opts = {}) {
           "\\s*<?([^\\s]*?)>?(?:\\s+['\"]([\\s\\S]*?)['\"])?\\s*";
   var pressHandler = function(target) {
     if (opts.onLink) {
-      opts.onLink(target);
+      opts.onLink(target).catch(function(error) {
+        console.log('There has been a problem with this action. ' + error.message);
+          throw error;
+        });
     }
   };
   var parseInline = function(parse, content, state) {
