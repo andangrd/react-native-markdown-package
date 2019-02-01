@@ -171,6 +171,13 @@ AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 
 Default style properties will be applied to the markdown. You could replace it with your preference by adding `styles` property like the example above.
 
+#### `onLink`
+
+This prop will accept a function. This is a callback function for any link inside markdown syntax, so you could costumize the handler for onClick event from the link.
+
+*NOTE :* 
+_Email link (mailto) could be tested on real device only, it won't be able to test on Simulator as discuss in this [StackOverflow](https://stackoverflow.com/questions/44769710/opneurl-react-native-linking-call-mailto)_
+
 ## Thanks To
 
 I'm very thankful to contributors who help me to make this libary better, and also this project was actually forked from [lwansbrough](https://github.com/lwansbrough) , with some enhancements below :
