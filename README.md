@@ -176,7 +176,7 @@ Default style properties will be applied to the markdown. You could replace it w
 This prop will accept a function. This is a callback function for any link inside markdown syntax, so you could costumize the handler for onClick event from the link.
 
 *NOTE :* 
-_Email link (mailto) will only be available to be tested on real device, it won't be able to test on Simulator as discuss in this [StackOverflow](https://stackoverflow.com/questions/44769710/opneurl-react-native-linking-call-mailto)_
+_Email link (mailto) could be tested on real device only, it won't be able to test on Simulator as discuss in this [StackOverflow](https://stackoverflow.com/questions/44769710/opneurl-react-native-linking-call-mailto)_
 
 ## Thanks To
 
