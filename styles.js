@@ -35,7 +35,8 @@ export default {
       fontWeight: '500',
     },
     del: {
-      backgroundColor: '#222222',
+      textDecorationLine: 'line-through',
+      textDecorationStyle: 'solid'
     },
     em: {
       fontStyle: 'italic',
