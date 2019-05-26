@@ -10,8 +10,7 @@ To install this library, you can easily run this command from your project folde
 
 Check this simple app for implementation example [Example app](https://github.com/andangrd/rn-markdown-example)
 
-<img src="https://raw.githubusercontent.com/andangrd/rn-markdown-example/master/assets/images/example-2.png" width="250">
-
+<img width="250" src="https://user-images.githubusercontent.com/26213148/58348380-c6f45a00-7e8a-11e9-9b67-db6f5a77c097.png">
 
 ## How to use
 
@@ -74,7 +73,7 @@ Below is some example to print blockquote
 
 this is _italic_ 
 this is **strong**
-Some *really* basic **Markdown**.
+Some *really* ~~basic~~ **Markdown**.
 
 
 | # | Name   | Age 
@@ -207,6 +206,11 @@ I'm very thankful to contributors who help me to make this libary better, and al
     * Allow user to include plain text from variable using back tick (1.3.3)
 
     * New feature, codeblock (1.4.0)
+    
+    * New feature, on link handler (1.4.3)
+    
+    * Bug fix, Strike through issue (1.4.4)
+    
     
 
 Happy Coding... ;)
