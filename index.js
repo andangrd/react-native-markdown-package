@@ -22,7 +22,7 @@ class Markdown extends Component {
       onImageClose: props.onImageClose,
     };
 
-    const mergedStyles = StyleSheet.create(merge({}, styles, props.styles));
+    const mergedStyles = merge({}, styles, props.styles);
     var rules = require('./rules')(mergedStyles, opts);
     rules = merge({}, SimpleMarkdown.defaultRules, rules);
 

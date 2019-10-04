@@ -1,6 +1,7 @@
-import { Dimensions } from 'react-native';
 
-export default {
+import { Dimensions, StyleSheet } from 'react-native';
+
+export default StyleSheet.create({
     autolink: {
       color: 'blue',
     },
@@ -175,5 +176,5 @@ export default {
       borderColor: '#222222',
       borderBottomWidth: 1,
     },
-  };
+  });
   
