@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "prop-types": "^15.6.0",
     "react-native-lightbox": "^0.7.0",
-    "simple-markdown": "^0.4.4"
+    "simple-markdown": "^0.6.0"
   },
   "repository": {
     "type": "git",
