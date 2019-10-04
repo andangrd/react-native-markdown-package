@@ -10,7 +10,7 @@ To install this library, you can easily run this command from your project folde
 
 Check this simple app for implementation example [Example app](https://github.com/andangrd/rn-markdown-example)
 
-<img width="250" src="https://user-images.githubusercontent.com/26213148/58348380-c6f45a00-7e8a-11e9-9b67-db6f5a77c097.png">
+<img width="250" src="https://user-images.githubusercontent.com/26213148/66242033-d0d87480-e72a-11e9-9fda-231d2789513c.gif">
 
 ## How to use
 
@@ -25,18 +25,23 @@ Here we are, take a look at this simple implementation:
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
+ *
+ * @format
  * @flow
  */
 
-import React, { Component } from 'react';
-import Markdown from 'react-native-markdown-package';
+import React from 'react';
 import {
-  AppRegistry,
   StyleSheet,
-  Text,
+  ScrollView,
   View,
+  Text,
   Linking
 } from 'react-native';
+import {
+  Colors,
+} from 'react-native/Libraries/NewAppScreen';
+import Markdown from 'react-native-markdown-package';
 
 const text = `
 # This is Heading 1
@@ -81,28 +86,90 @@ Some *really* ~~basic~~ **Markdown**.
 | 1 | John   | 19  |
 | 2 | Sally  | 18  |
 | 3 | Stream | 20  |
-` ;
 
-export default class App extends Component<{}> {
-  render() {
-    return (
+
+this is an example for adding picture:
+
+![Screen Shot 2019-10-05 at 3 19 33 AM](https://user-images.githubusercontent.com/26213148/66237659-d11f4280-e71f-11e9-91e3-7a3f08659d89.png)
+
+
+`;
+
+
+const App: () => React$Node = () => {
+  return (
+    <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.scrollView}>
       <View style={styles.container}>
           <Text style={styles.welcome}>
             Welcome to React Native!
           </Text>
           <Markdown 
-            styles={styles.markdown} 
+            styles={msrkdownStyle} 
             onLink={(url) => Linking.openURL(url)}
           >
             { text } 
           </Markdown>
-        
+          <Markdown 
+            styles={singleStyle}
+          >
+            this is a test single line md
+          </Markdown>
       </View>
-    );
-  }
+    </ScrollView>
+  );
 }
+const singleStyle = {
+  text: {
+    color: 'blue',
+    textAlign: "right"
+  },
+  view: {
+    alignSelf: 'stretch',
+  }
+};
 
-const styles = {
+const msrkdownStyle = {
+  heading1: {
+    color: 'red'
+  },
+  heading2: {
+    color: 'green',
+    textAlign: "right"
+  },
+  strong: {
+    color: 'blue'
+  },
+  em: {
+    color: 'cyan'
+  },
+  text: {
+    color: 'black',
+  },
+  blockQuoteText: {
+    color: 'grey'
+  },
+  blockQuoteSection: {
+    flexDirection: 'row',
+  },
+  blockQuoteSectionBar: {
+    width: 3,
+    height: null,
+    backgroundColor: '#DDDDDD',
+    marginRight: 15,
+  },
+  codeBlock: {
+    fontFamily: 'Courier',
+    fontWeight: '500',
+    backgroundColor: '#DDDDDD',
+  },
+  tableHeader: {
+    backgroundColor: 'grey',
+  },
+};
+
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -110,6 +177,9 @@ const styles = {
     backgroundColor: '#F5FCFF',
     margin: 10,
     padding:20
+  },
+  scrollView: {
+    backgroundColor: Colors.lighter,
   },
   welcome: {
     fontSize: 20,
@@ -119,48 +189,10 @@ const styles = {
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
-  },
-  markdown: {
-    heading1: {
-      color: 'red'
-    },
-    heading2: {
-      color: 'green'
-    },
-    strong: {
-      color: 'blue'
-    },
-    em: {
-      color: 'cyan'
-    },
-    text: {
-      color: 'black',
-    },
-    blockQuoteText: {
-      color: 'grey'
-    },
-    blockQuoteSection: {
-      flexDirection: 'row',
-    },
-    blockQuoteSectionBar: {
-      width: 3,
-      height: null,
-      backgroundColor: '#DDDDDD',
-      marginRight: 15,
-    },
-    codeBlock: {
-      fontFamily: 'Courier',
-      fontWeight: '500',
-      backgroundColor: '#DDDDDD',
-    },
-    tableHeader: {
-      backgroundColor: 'grey',
-    },
   }
-};
+});
 
-
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+export default App;
 
 ```
 
@@ -210,6 +242,8 @@ I'm very thankful to contributors who help me to make this libary better, and al
     * New feature, on link handler (1.4.3)
     
     * Bug fix, Strike through issue (1.4.4)
+
+    * Default Style for outer View, remove deprecated ComponentWillMount (1.4.5)
     
     
 
