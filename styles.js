@@ -30,6 +30,7 @@ export default StyleSheet.create({
       overflow: 'hidden',
     },
     view: {
+      alignSelf: 'stretch',
     },
     codeBlock: {
       fontFamily: 'Courier',
