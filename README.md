@@ -243,7 +243,7 @@ I'm very thankful to contributors who help me to make this libary better, and al
     
     * Bug fix, Strike through issue (1.4.4)
 
-    * Default Style for outer View, remove deprecated ComponentWillMount (1.4.5)
+    * Default Style for outer View, remove deprecated ComponentWillMount (1.5.0)
     
     
 
