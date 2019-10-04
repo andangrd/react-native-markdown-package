@@ -6,22 +6,23 @@ import SimpleMarkdown from 'simple-markdown';
 import styles from './styles';
 
 class Markdown extends Component {
-  componentWillMount() {
-    if (this.props.enableLightBox && !this.props.navigator) {
+  constructor(props) {
+    super(props);
+    if (props.enableLightBox && !props.navigator) {
       throw new Error('props.navigator must be specified when enabling lightbox');
     }
 
     const opts = {
-      enableLightBox: this.props.enableLightBox,
-      navigator: this.props.navigator,
-      imageParam: this.props.imageParam,
-      onLink: this.props.onLink,
-      bgImage: this.props.bgImage,
-      onImageOpen: this.props.onImageOpen,
-      onImageClose: this.props.onImageClose,
+      enableLightBox: props.enableLightBox,
+      navigator: props.navigator,
+      imageParam: props.imageParam,
+      onLink: props.onLink,
+      bgImage: props.bgImage,
+      onImageOpen: props.onImageOpen,
+      onImageClose: props.onImageClose,
     };
 
-    const mergedStyles = merge({}, styles, this.props.styles);
+    const mergedStyles = StyleSheet.create(merge({}, styles, props.styles));
     var rules = require('./rules')(mergedStyles, opts);
     rules = merge({}, SimpleMarkdown.defaultRules, rules);
 
