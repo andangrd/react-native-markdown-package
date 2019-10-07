@@ -30,7 +30,7 @@ Here we are, take a look at this simple implementation:
  * @flow
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 import {
   StyleSheet,
   ScrollView,
@@ -95,10 +95,10 @@ this is an example for adding picture:
 
 `;
 
-
-const App: () => React$Node = () => {
-  return (
-    <ScrollView
+export default class App extends Component<{}> {
+  render() {
+    return (
+      <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
       <View style={styles.container}>
@@ -106,67 +106,70 @@ const App: () => React$Node = () => {
             Welcome to React Native!
           </Text>
           <Markdown 
-            styles={msrkdownStyle} 
+            styles={markdownStyle.collectiveMd} 
             onLink={(url) => Linking.openURL(url)}
           >
             { text } 
           </Markdown>
           <Markdown 
-            styles={singleStyle}
+            styles={markdownStyle.singleLineMd}
           >
             this is a test single line md
           </Markdown>
       </View>
     </ScrollView>
-  );
-}
-const singleStyle = {
-  text: {
-    color: 'blue',
-    textAlign: "right"
-  },
-  view: {
-    alignSelf: 'stretch',
+    );
   }
-};
+}
 
-const msrkdownStyle = {
-  heading1: {
-    color: 'red'
+const markdownStyle = {
+  singleLineMd: {
+    text: {
+      color: 'blue',
+      textAlign: "right"
+    },
+    view: {
+      alignSelf: 'stretch',
+    }
   },
-  heading2: {
-    color: 'green',
-    textAlign: "right"
-  },
-  strong: {
-    color: 'blue'
-  },
-  em: {
-    color: 'cyan'
-  },
-  text: {
-    color: 'black',
-  },
-  blockQuoteText: {
-    color: 'grey'
-  },
-  blockQuoteSection: {
-    flexDirection: 'row',
-  },
-  blockQuoteSectionBar: {
-    width: 3,
-    height: null,
-    backgroundColor: '#DDDDDD',
-    marginRight: 15,
-  },
-  codeBlock: {
-    fontFamily: 'Courier',
-    fontWeight: '500',
-    backgroundColor: '#DDDDDD',
-  },
-  tableHeader: {
-    backgroundColor: 'grey',
-  },
+  collectiveMd: {
+    heading1: {
+      color: 'red'
+    },
+    heading2: {
+      color: 'green',
+      textAlign: "right"
+    },
+    strong: {
+      color: 'blue'
+    },
+    em: {
+      color: 'cyan'
+    },
+    text: {
+      color: 'black',
+    },
+    blockQuoteText: {
+      color: 'grey'
+    },
+    blockQuoteSection: {
+      flexDirection: 'row',
+    },
+    blockQuoteSectionBar: {
+      width: 3,
+      height: null,
+      backgroundColor: '#DDDDDD',
+      marginRight: 15,
+    },
+    codeBlock: {
+      fontFamily: 'Courier',
+      fontWeight: '500',
+      backgroundColor: '#DDDDDD',
+    },
+    tableHeader: {
+      backgroundColor: 'grey',
+    },
+  }
 };
 
 const styles = StyleSheet.create({
@@ -191,8 +194,6 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   }
 });
-
-export default App;
 
 ```
 
