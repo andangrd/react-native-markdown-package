@@ -1,3 +1,5 @@
+[![npm downloads](https://img.shields.io/npm/dm/react-native-markdown-package)](https://www.npmjs.com/package/react-native-markdown-package)
+
 # React Native Markdown Package
 React Native Markdown Package is a library for implementing markdown syntax in React Native.
 
