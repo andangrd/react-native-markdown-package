@@ -1,6 +1,6 @@
 {
   "name": "react-native-markdown-package",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "Package for implementing markdown syntax in React Native",
   "main": "index.js",
   "scripts": {
