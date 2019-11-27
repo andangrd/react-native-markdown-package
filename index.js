@@ -20,11 +20,12 @@ class Markdown extends Component {
       bgImage: props.bgImage,
       onImageOpen: props.onImageOpen,
       onImageClose: props.onImageClose,
+      rules: props.rules
     };
 
     const mergedStyles = merge({}, styles, props.styles);
     var rules = require('./rules')(mergedStyles, opts);
-    rules = merge({}, SimpleMarkdown.defaultRules, rules);
+    rules = merge({}, SimpleMarkdown.defaultRules, rules, opts.rules);
 
     const parser = SimpleMarkdown.parserFor(rules);
     this.parse = function(source) {
@@ -64,10 +65,12 @@ Markdown.propTypes = {
   styles: PropTypes.shape({
     view: ViewPropTypes.style,
   }),
+  rules: PropTypes.object,
 };
 
 Markdown.defaultProps = {
-  styles: styles
+  styles: styles,
+  rules: {}
 }
 
 export default Markdown;
