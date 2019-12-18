@@ -1,5 +1,5 @@
 
-import { Dimensions, StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet, Platform } from 'react-native';
 
 export default StyleSheet.create({
     autolink: {
@@ -33,7 +33,7 @@ export default StyleSheet.create({
       alignSelf: 'stretch',
     },
     codeBlock: {
-      fontFamily: 'Courier',
+      fontFamily: Platform.OS === 'ios' ? 'Courier' : 'monospace',
       fontWeight: '500',
     },
     del: {
@@ -83,7 +83,7 @@ export default StyleSheet.create({
       borderColor: '#dddddd',
       borderRadius: 3,
       borderWidth: 1,
-      fontFamily: 'Courier',
+      fontFamily: Platform.OS === 'ios' ? 'Courier' : 'monospace',
       fontWeight: 'bold',
     },
     list: {
