@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { View, ViewPropTypes } from 'react-native';
-import { merge, isEqual, isArray } from 'lodash';
+import React, {Component} from 'react';
+import {View, ViewPropTypes} from 'react-native';
+import {merge, isEqual, isArray} from 'lodash';
 import PropTypes from 'prop-types';
 import SimpleMarkdown from 'simple-markdown';
 import styles from './styles';
@@ -27,7 +27,7 @@ class Markdown extends Component {
     rules = merge({}, SimpleMarkdown.defaultRules, rules);
 
     const parser = SimpleMarkdown.parserFor(rules);
-    this.parse = function(source) {
+    this.parse = function (source) {
       const blockSource = source + '\n\n';
       return parser(blockSource, {inline: false});
     };
@@ -45,13 +45,13 @@ class Markdown extends Component {
   }
 
   render() {
-    const child = isArray(this.props.children) 
-                ? this.props.children.join('') 
-                : this.props.children;
+    const child = isArray(this.props.children)
+      ? this.props.children.join('')
+      : this.props.children;
 
     const tree = this.parse(child);
 
-    return <View style={[styles.view, this.props.styles.view]}>{ this.renderer(tree) }</View>
+    return <View style={[styles.view, this.props.styles.view]}>{this.renderer(tree)}</View>
   }
 }
 
