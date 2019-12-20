@@ -35,6 +35,7 @@ export default StyleSheet.create({
     codeBlock: {
       fontFamily: 'Courier',
       fontWeight: '500',
+      backgroundColor: '#DDDDDD',
     },
     del: {
       textDecorationLine: 'line-through',
