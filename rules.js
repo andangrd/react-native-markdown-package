@@ -9,38 +9,38 @@ import {
 import Lightbox from 'react-native-lightbox';
 
 import SimpleMarkdown from 'simple-markdown';
-import { map, includes, head, noop, some, size  } from 'lodash';
+import {map, includes, head, noop, some, size} from 'lodash';
 
-module.exports = function(styles, opts = {}) {
+module.exports = function (styles, opts = {}) {
   const enableLightBox = opts.enableLightBox || false;
   const navigator = opts.navigator;
 
   const LINK_INSIDE = '(?:\\[[^\\]]*\\]|[^\\]]|\\](?=[^\\[]*\\]))*';
   const LINK_HREF_AND_TITLE =
-          "\\s*<?([^\\s]*?)>?(?:\\s+['\"]([\\s\\S]*?)['\"])?\\s*";
-  var pressHandler = function(target) {
+    "\\s*<?([^\\s]*?)>?(?:\\s+['\"]([\\s\\S]*?)['\"])?\\s*";
+  var pressHandler = function (target) {
     if (opts.onLink) {
-      opts.onLink(target).catch(function(error) {
+      opts.onLink(target).catch(function (error) {
         console.log('There has been a problem with this action. ' + error.message);
-          throw error;
-        });
+        throw error;
+      });
     }
   };
-  var parseInline = function(parse, content, state) {
+  var parseInline = function (parse, content, state) {
     var isCurrentlyInline = state.inline || false;
     state.inline = true;
     var result = parse(content, state);
     state.inline = isCurrentlyInline;
     return result;
   };
-  var parseCaptureInline = function(capture, parse, state) {
+  var parseCaptureInline = function (capture, parse, state) {
     return {
       content: parseInline(parse, capture[2], state)
     };
   };
   return {
     autolink: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         state.withinText = true;
         const _pressHandler = () => {
           pressHandler(node.target);
@@ -53,11 +53,11 @@ module.exports = function(styles, opts = {}) {
       },
     },
     blockQuote: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         state.withinQuote = true;
-        
+
         const img = React.createElement(View, {
-          key: state.key-state.key,
+          key: state.key - state.key,
           style: [styles.blockQuoteSectionBar, styles.blockQuoteBar],
         });
 
@@ -71,11 +71,11 @@ module.exports = function(styles, opts = {}) {
           key: state.key,
           style: [styles.blockQuoteSection, styles.blockQuoteText],
         }, [img, blockQuote]);
-      
+
       },
     },
     br: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         return React.createElement(Text, {
           key: state.key,
           style: styles.br,
@@ -83,7 +83,7 @@ module.exports = function(styles, opts = {}) {
       },
     },
     codeBlock: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         state.withinText = true;
         return React.createElement(Text, {
           key: state.key,
@@ -92,7 +92,7 @@ module.exports = function(styles, opts = {}) {
       },
     },
     del: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         state.withinText = true;
         return React.createElement(Text, {
           key: state.key,
@@ -101,7 +101,7 @@ module.exports = function(styles, opts = {}) {
       },
     },
     em: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         state.withinText = true;
         state.style = {
           ...(state.style || {}),
@@ -115,7 +115,7 @@ module.exports = function(styles, opts = {}) {
     },
     heading: {
       match: SimpleMarkdown.blockRegex(/^ *(#{1,6}) *([^\n]+?) *#* *(?:\n *)+/),
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         // const newState = {...state};
         state.withinText = true;
         state.withinHeading = true;
@@ -133,18 +133,18 @@ module.exports = function(styles, opts = {}) {
       },
     },
     hr: {
-      react: function(node, output, {...state}) {
-        return React.createElement(View, { key: state.key, style: styles.hr });
+      react: function (node, output, {...state}) {
+        return React.createElement(View, {key: state.key, style: styles.hr});
       },
     },
     image: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         var imageParam = opts.imageParam ? opts.imageParam : '';
         var target = node.target + imageParam;
         var image = React.createElement(Image, {
           key: state.key,
           // resizeMode: 'contain',
-          source: { uri: target },
+          source: {uri: target},
           style: styles.image,
         });
         if (enableLightBox) {
@@ -161,7 +161,7 @@ module.exports = function(styles, opts = {}) {
     },
     inlineCode: {
       parse: parseCaptureInline,
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         state.withinText = true;
         return React.createElement(Text, {
           key: state.key,
@@ -171,9 +171,9 @@ module.exports = function(styles, opts = {}) {
     },
     link: {
       match: SimpleMarkdown.inlineRegex(new RegExp(
-          '^\\[(' + LINK_INSIDE + ')\\]\\(' + LINK_HREF_AND_TITLE + '\\)'
+        '^\\[(' + LINK_INSIDE + ')\\]\\(' + LINK_HREF_AND_TITLE + '\\)'
       )),
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         state.withinLink = true;
         const _pressHandler = () => {
           pressHandler(node.target);
@@ -188,31 +188,31 @@ module.exports = function(styles, opts = {}) {
       },
     },
     list: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         var numberIndex = 1;
-        var items = map(node.items, function(item, i) {
+        var items = map(node.items, function (item, i) {
           var bullet;
           if (node.ordered) {
-            bullet = React.createElement(Text, { key: 0, style: styles.listItemNumber }, (numberIndex) + '. ');
+            bullet = React.createElement(Text, {key: 0, style: styles.listItemNumber}, (numberIndex) + '. ');
           }
           else {
-            bullet = React.createElement(Text, { key: 0, style: styles.listItemBullet }, '\u2022 ');
+            bullet = React.createElement(Text, {key: 0, style: styles.listItemBullet}, '\u2022 ');
           }
 
-          if(item.length > 1) {
-            if(item[1].type == 'list') {
+          if (item.length > 1) {
+            if (item[1].type == 'list') {
               state.withinList = true;
             }
           }
 
-          
+
 
           var content = output(item, state);
           var listItem;
           if (includes(['text', 'paragraph', 'strong'], (head(item) || {}).type) && state.withinList == false) {
             state.withinList = true;
             listItem = React.createElement(Text, {
-              style: [styles.listItemText, { marginBottom: 0 }],
+              style: [styles.listItemText, {marginBottom: 0}],
               key: 1,
             }, content);
           } else {
@@ -230,19 +230,19 @@ module.exports = function(styles, opts = {}) {
           }, [bullet, listItem]);
         });
 
-        return React.createElement(View, { key: state.key, style: styles.list }, items);
+        return React.createElement(View, {key: state.key, style: styles.list}, items);
       },
     },
     sublist: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
 
-        var items = map(node.items, function(item, i) {
+        var items = map(node.items, function (item, i) {
           var bullet;
           if (node.ordered) {
-            bullet = React.createElement(Text, { key: 0, style: styles.listItemNumber }, (i + 1) + '. ');
+            bullet = React.createElement(Text, {key: 0, style: styles.listItemNumber}, (i + 1) + '. ');
           }
           else {
-            bullet = React.createElement(Text, { key: 0, style: styles.listItemBullet }, '\u2022 ');
+            bullet = React.createElement(Text, {key: 0, style: styles.listItemBullet}, '\u2022 ');
           }
 
           var content = output(item, state);
@@ -266,11 +266,11 @@ module.exports = function(styles, opts = {}) {
           }, [bullet, listItem]);
         });
 
-        return React.createElement(View, { key: state.key, style: styles.sublist }, items);
+        return React.createElement(View, {key: state.key, style: styles.sublist}, items);
       },
     },
     mailto: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         state.withinText = true;
         return React.createElement(Text, {
           key: state.key,
@@ -280,7 +280,7 @@ module.exports = function(styles, opts = {}) {
       },
     },
     newline: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         return React.createElement(Text, {
           key: state.key,
           style: styles.newline,
@@ -288,7 +288,7 @@ module.exports = function(styles, opts = {}) {
       },
     },
     paragraph: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         let paragraphStyle = styles.paragraph;
         // Allow image to drop in next line within the paragraph
         if (some(node.content, {type: 'image'})) {
@@ -299,7 +299,7 @@ module.exports = function(styles, opts = {}) {
           }, output(node.content, state));
           state.withinParagraphWithImage = false;
           return paragraph;
-        } else if (size(node.content) < 3 && some(node.content, {type: 'strong'})){
+        } else if (size(node.content) < 3 && some(node.content, {type: 'strong'})) {
           // align to center for Strong only content
           // require a check of content array size below 3,
           // as parse will include additional space as `text`
@@ -315,7 +315,7 @@ module.exports = function(styles, opts = {}) {
       },
     },
     strong: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         state.withinText = true;
         state.style = {
           ...(state.style || {}),
@@ -328,18 +328,18 @@ module.exports = function(styles, opts = {}) {
       },
     },
     table: {
-      react: function(node, output, {...state}) {
-        var headers = map(node.header, function(content, i) {
+      react: function (node, output, {...state}) {
+        var headers = map(node.header, function (content, i) {
           return React.createElement(Text, {
             key: i,
             style: styles.tableHeaderCell,
           }, output(content, state));
         });
 
-        var header = React.createElement(View, { key: -1, style: styles.tableHeader }, headers);
+        var header = React.createElement(View, {key: -1, style: styles.tableHeader}, headers);
 
-        var rows = map(node.cells, function(row, r) {
-          var cells = map(row, function(content, c) {
+        var rows = map(node.cells, function (row, r) {
+          var cells = map(row, function (content, c) {
             return React.createElement(View, {
               key: c,
               style: styles.tableRowCell,
@@ -349,27 +349,27 @@ module.exports = function(styles, opts = {}) {
           if (node.cells.length - 1 == r) {
             rowStyles.push(styles.tableRowLast);
           }
-          return React.createElement(View, { key: r, style: rowStyles }, cells);
+          return React.createElement(View, {key: r, style: rowStyles}, cells);
         });
 
-        return React.createElement(View, { key: state.key, style: styles.table }, [ header, rows ]);
+        return React.createElement(View, {key: state.key, style: styles.table}, [header, rows]);
       },
     },
     text: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         let textStyle = {
           ...styles.text,
           ...(state.style || {})
         };
-        
+
         if (state.withinLink) {
           textStyle = [styles.text, styles.autolink];
         }
 
-        if(state.withinQuote) {
+        if (state.withinQuote) {
           textStyle = [styles.text, styles.blockQuoteText];
         }
-        
+
         return React.createElement(Text, {
           key: state.key,
           style: textStyle,
@@ -377,7 +377,7 @@ module.exports = function(styles, opts = {}) {
       },
     },
     u: { // u will to the same as strong, to avoid the View nested inside text problem
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         state.withinText = true;
         state.style = {
           ...(state.style || {}),
@@ -390,7 +390,7 @@ module.exports = function(styles, opts = {}) {
       },
     },
     url: {
-      react: function(node, output, {...state}) {
+      react: function (node, output, {...state}) {
         state.withinText = true;
         const _pressHandler = () => {
           pressHandler(node.target);
