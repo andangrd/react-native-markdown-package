@@ -248,6 +248,8 @@ I'm very thankful to contributors who help me to make this libary better, and al
 
     * Default Style for outer View, remove deprecated ComponentWillMount (1.5.0)
     
+    * Allow user to replace default rules, update default font family for `codeBlock` on android [(v1.6.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.6.0)
+    
     
 
 Happy Coding... ;)
