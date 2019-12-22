@@ -28,5 +28,6 @@
   "bugs": {
     "url": "https://github.com/andangrd/react-native-markdown-package/issues"
   },
-  "homepage": "https://github.com/andangrd/react-native-markdown-package#readme"
+  "homepage": "https://github.com/andangrd/react-native-markdown-package#readme",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
