@@ -214,7 +214,14 @@ _Email link (mailto) could be tested on real device only, it won't be able to te
 
 ## Thanks To
 
-I'm very thankful to contributors who help me to make this libary better, and also this project was actually forked from [lwansbrough](https://github.com/lwansbrough) , with some enhancements below :
+I'm very thankful to the contributors who help me to make this libary better:
+
+[![img](https://avatars1.githubusercontent.com/u/26213148?s=60&v=4)](https://github.com/andangrd/)
+[![img](https://avatars0.githubusercontent.com/u/16436270?s=60&v=4)](https://github.com/deadcoder0904)
+[![img](https://avatars1.githubusercontent.com/u/22953807?s=60&v=4)](https://github.com/andangr)
+[![img](https://avatars0.githubusercontent.com/u/8979249?s=60&v=4)](https://github.com/ntcong91)
+
+This project was actually forked from [lwansbrough](https://github.com/lwansbrough) , with some enhancements below :
  1. Styling method.
     
     Now you can easily add styling on each syntax, e.g. add different color either in `strong`, `header`, or another md syntax. All default styles in this package is also already moved to new file `styles.js`.
