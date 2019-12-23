@@ -1,6 +1,6 @@
 {
   "name": "react-native-markdown-package",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Package for implementing markdown syntax in React Native",
   "main": "index.js",
   "scripts": {
@@ -29,5 +29,7 @@
     "url": "https://github.com/andangrd/react-native-markdown-package/issues"
   },
   "homepage": "https://github.com/andangrd/react-native-markdown-package#readme",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }
