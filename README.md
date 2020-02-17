@@ -256,6 +256,8 @@ This project was actually forked from [lwansbrough](https://github.com/lwansbrou
     * Default Style for outer View, remove deprecated ComponentWillMount (1.5.0)
     
     * Allow user to replace default rules, update default font family for `codeBlock` on android [(v1.6.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.6.0)
+
+    * Update to use latest simple-markdown [(v1.7.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.7.0)
     
     
 
