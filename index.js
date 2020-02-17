@@ -32,7 +32,7 @@ class Markdown extends Component {
       const blockSource = source + '\n\n';
       return parser(blockSource, {inline: false});
     };
-    this.renderer = SimpleMarkdown.reactFor(SimpleMarkdown.ruleOutput(rules, 'react'));
+    this.renderer = SimpleMarkdown.outputFor(rules, 'react');
   }
 
   componentDidMount() {
