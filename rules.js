@@ -192,6 +192,8 @@ module.exports = function (styles, opts = {}) {
         var numberIndex = 1;
         var items = map(node.items, function (item, i) {
           var bullet;
+          state.withinList = false;
+          
           if (node.ordered) {
             bullet = React.createElement(Text, {key: 0, style: styles.listItemNumber}, (numberIndex) + '. ');
           }
