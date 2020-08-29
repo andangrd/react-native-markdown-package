@@ -1,3 +1,5 @@
+[![npm downloads](https://img.shields.io/npm/dm/react-native-markdown-package)](https://www.npmjs.com/package/react-native-markdown-package) [![npm_downloads](https://img.shields.io/npm/dt/react-native-markdown-package)](https://www.npmjs.com/package/react-native-markdown-package)
+
 # React Native Markdown Package
 React Native Markdown Package is a library for implementing markdown syntax in React Native.
 
@@ -30,7 +32,7 @@ Here we are, take a look at this simple implementation:
  * @flow
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 import {
   StyleSheet,
   ScrollView,
@@ -95,10 +97,10 @@ this is an example for adding picture:
 
 `;
 
-
-const App: () => React$Node = () => {
-  return (
-    <ScrollView
+export default class App extends Component<{}> {
+  render() {
+    return (
+      <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
       <View style={styles.container}>
@@ -106,19 +108,20 @@ const App: () => React$Node = () => {
             Welcome to React Native!
           </Text>
           <Markdown 
-            styles={msrkdownStyle} 
+            styles={markdownStyle.collectiveMd} 
             onLink={(url) => Linking.openURL(url)}
           >
             { text } 
           </Markdown>
           <Markdown 
-            styles={singleStyle}
+            styles={markdownStyle.singleLineMd}
           >
             this is a test single line md
           </Markdown>
       </View>
     </ScrollView>
-  );
+    );
+  }
 }
 const singleStyle = {
   text: {
@@ -130,44 +133,55 @@ const singleStyle = {
   }
 };
 
-const msrkdownStyle = {
-  heading1: {
-    color: 'red'
+const markdownStyle = {
+  singleLineMd: {
+    text: {
+      color: 'blue',
+      textAlign: "right"
+    },
+    view: {
+      alignSelf: 'stretch',
+    }
   },
-  heading2: {
-    color: 'green',
-    textAlign: "right"
-  },
-  strong: {
-    color: 'blue'
-  },
-  em: {
-    color: 'cyan'
-  },
-  text: {
-    color: 'black',
-  },
-  blockQuoteText: {
-    color: 'grey'
-  },
-  blockQuoteSection: {
-    flexDirection: 'row',
-  },
-  blockQuoteSectionBar: {
-    width: 3,
-    height: null,
-    backgroundColor: '#DDDDDD',
-    marginRight: 15,
-  },
-  codeBlock: {
-    fontFamily: 'Courier',
-    fontWeight: '500',
-    backgroundColor: '#DDDDDD',
-  },
-  tableHeader: {
-    backgroundColor: 'grey',
-  },
-};
+  collectiveMd: {
+    heading1: {
+      color: 'red'
+    },
+    heading2: {
+      color: 'green',
+      textAlign: "right"
+    },
+    strong: {
+      color: 'blue'
+    },
+    em: {
+      color: 'cyan'
+    },
+    text: {
+      color: 'black',
+    },
+    blockQuoteText: {
+      color: 'grey'
+    },
+    blockQuoteSection: {
+      flexDirection: 'row',
+    },
+    blockQuoteSectionBar: {
+      width: 3,
+      height: null,
+      backgroundColor: '#DDDDDD',
+      marginRight: 15,
+    },
+    codeBlock: {
+      fontFamily: 'Courier',
+      fontWeight: '500',
+      backgroundColor: '#DDDDDD',
+    },
+    tableHeader: {
+      backgroundColor: 'grey',
+    },
+  }
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -192,8 +206,6 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
-
 ```
 
 ## Properties
@@ -211,7 +223,14 @@ _Email link (mailto) could be tested on real device only, it won't be able to te
 
 ## Thanks To
 
-I'm very thankful to contributors who help me to make this libary better, and also this project was actually forked from [lwansbrough](https://github.com/lwansbrough) , with some enhancements below :
+I'm very thankful to the contributors who help me to make this libary better:
+
+[![img](https://avatars1.githubusercontent.com/u/26213148?s=60&v=4)](https://github.com/andangrd/)
+[![img](https://avatars0.githubusercontent.com/u/16436270?s=60&v=4)](https://github.com/deadcoder0904)
+[![img](https://avatars1.githubusercontent.com/u/22953807?s=60&v=4)](https://github.com/andangr)
+[![img](https://avatars0.githubusercontent.com/u/8979249?s=60&v=4)](https://github.com/ntcong91)
+
+This project was actually forked from [lwansbrough](https://github.com/lwansbrough) , with some enhancements below :
  1. Styling method.
     
     Now you can easily add styling on each syntax, e.g. add different color either in `strong`, `header`, or another md syntax. All default styles in this package is also already moved to new file `styles.js`.
@@ -243,7 +262,11 @@ I'm very thankful to contributors who help me to make this libary better, and al
     
     * Bug fix, Strike through issue (1.4.4)
 
-    * Default Style for outer View, remove deprecated ComponentWillMount (1.4.5)
+    * Default Style for outer View, remove deprecated ComponentWillMount (1.5.0)
+    
+    * Allow user to replace default rules, update default font family for `codeBlock` on android [(v1.6.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.6.0)
+
+    * Update to use latest simple-markdown [(v1.7.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.7.0)
     
     
 
