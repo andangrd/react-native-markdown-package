@@ -123,6 +123,15 @@ export default class App extends Component<{}> {
     );
   }
 }
+const singleStyle = {
+  text: {
+    color: 'blue',
+    textAlign: "right"
+  },
+  view: {
+    alignSelf: 'stretch',
+  }
+};
 
 const markdownStyle = {
   singleLineMd: {
@@ -172,7 +181,7 @@ const markdownStyle = {
       backgroundColor: 'grey',
     },
   }
-};
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -208,6 +217,35 @@ Default style properties will be applied to the markdown. You could replace it w
 #### `onLink`
 
 This prop will accept a function. This is a callback function for any link inside markdown syntax, so you could costumize the handler for onClick event from the link.
+
+`onLinkCallback` should be a function that returns a promise.
+
+
+```
+
+const onLinkCallback = (url) => {
+  console.log('test test test');
+
+  const isErrorResult = false;
+
+  return new Promise((resolve, reject) => {
+    isErrorResult ? reject() : resolve();
+  });
+};
+
+...
+
+<Markdown
+  styles={markdownStyle.collectiveMd}
+  onLink={onLinkCallback}>
+  {text}
+</Markdown>
+
+...
+
+
+```
+
 
 *NOTE :* 
 _Email link (mailto) could be tested on real device only, it won't be able to test on Simulator as discuss in this [StackOverflow](https://stackoverflow.com/questions/44769710/opneurl-react-native-linking-call-mailto)_
@@ -258,6 +296,8 @@ This project was actually forked from [lwansbrough](https://github.com/lwansbrou
     * Allow user to replace default rules, update default font family for `codeBlock` on android [(v1.6.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.6.0)
 
     * Update to use latest simple-markdown [(v1.7.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.7.0)
+
+    * Update to use latest simple-markdown [(v1.8.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.8.0)
     
     
 
