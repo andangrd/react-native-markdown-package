@@ -252,7 +252,7 @@ _Email link (mailto) could be tested on real device only, it won't be able to te
 
 ## Thanks To
 
-I'm very thankful to the contributors who help me to make this libary better:
+thanks to all contributors who help me to make this libary better:
 
 [![img](https://avatars1.githubusercontent.com/u/26213148?s=60&v=4)](https://github.com/andangrd/)
 [![img](https://avatars0.githubusercontent.com/u/16436270?s=60&v=4)](https://github.com/deadcoder0904)
