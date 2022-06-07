@@ -16,6 +16,7 @@ class Markdown extends Component {
       enableLightBox: props.enableLightBox,
       navigator: props.navigator,
       imageParam: props.imageParam,
+      imagePrefix: props.imagePrefix,
       onLink: props.onLink,
       bgImage: props.bgImage,
       onImageOpen: props.onImageOpen,
@@ -58,6 +59,7 @@ class Markdown extends Component {
 
 Markdown.propTypes = {
   enableLightBox: PropTypes.bool,
+  imagePrefix: PropTypes.string,
   onLink: PropTypes.func,
   onImageOpen: PropTypes.func,
   onImageClose: PropTypes.func,
