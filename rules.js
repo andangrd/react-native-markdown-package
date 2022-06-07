@@ -140,7 +140,8 @@ module.exports = function (styles, opts = {}) {
     image: {
       react: function (node, output, {...state}) {
         var imageParam = opts.imageParam ? opts.imageParam : '';
-        var target = node.target + imageParam;
+        var prefix = opts.imagePrefix ? opts.imagePrefix  : '';
+        var target = prefix + node.target + imageParam;
         var image = React.createElement(Image, {
           key: state.key,
           // resizeMode: 'contain',

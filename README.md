@@ -1,14 +1,14 @@
 [![npm downloads](https://img.shields.io/npm/dm/react-native-markdown-package)](https://www.npmjs.com/package/react-native-markdown-package) [![npm_downloads](https://img.shields.io/npm/dt/react-native-markdown-package)](https://www.npmjs.com/package/react-native-markdown-package)
 
 # React Native Markdown Package
+
 React Native Markdown Package is a library for implementing markdown syntax in React Native.
 
 ## Getting started
 
 To install this library, you can easily run this command from your project folder.
 
-    `npm i react-native-markdown-package --save`
-
+`npm i react-native-markdown-package --save`
 
 Check this simple app for implementation example [Example app](https://github.com/andangrd/rn-markdown-example)
 
@@ -19,7 +19,7 @@ Check this simple app for implementation example [Example app](https://github.co
 What you need to do is `import` the `react-native-markdown-package` module and then use the
 `<Markdown/>` tag.
 
-How to use? 
+How to use?
 
 Here we are, take a look at this simple implementation:
 
@@ -78,12 +78,12 @@ Below is some example to print blockquote
 > Test block Quote
 > Another  block Quote
 
-this is _italic_ 
+this is _italic_
 this is **strong**
 Some *really* ~~basic~~ **Markdown**.
 
 
-| # | Name   | Age 
+| # | Name   | Age
 |---|--------|-----|
 | 1 | John   | 19  |
 | 2 | Sally  | 18  |
@@ -107,13 +107,13 @@ export default class App extends Component<{}> {
           <Text style={styles.welcome}>
             Welcome to React Native!
           </Text>
-          <Markdown 
-            styles={markdownStyle.collectiveMd} 
+          <Markdown
+            styles={markdownStyle.collectiveMd}
             onLink={(url) => Linking.openURL(url)}
           >
-            { text } 
+            { text }
           </Markdown>
-          <Markdown 
+          <Markdown
             styles={markdownStyle.singleLineMd}
           >
             this is a test single line md
@@ -220,7 +220,6 @@ This prop will accept a function. This is a callback function for any link insid
 
 `onLinkCallback` should be a function that returns a promise.
 
-
 ```
 
 const onLinkCallback = (url) => {
@@ -246,6 +245,20 @@ const onLinkCallback = (url) => {
 
 ```
 
+#### `imagePrefix`
+
+This prop will accept string, It can be used to assign a prefix to image filenames
+
+```
+...
+<Markdown
+  styles={markdownStyle.collectiveMd}
+  imagePrefix="https://example.com">
+{text}
+</Markdown>
+...
+
+```
 
 *NOTE :* 
 _Email link (mailto) could be tested on real device only, it won't be able to test on Simulator as discuss in this [StackOverflow](https://stackoverflow.com/questions/44769710/opneurl-react-native-linking-call-mailto)_
@@ -260,45 +273,47 @@ thanks to all contributors who help me to make this libary better:
 [![img](https://avatars0.githubusercontent.com/u/8979249?s=60&v=4)](https://github.com/ntcong91)
 
 This project was actually forked from [lwansbrough](https://github.com/lwansbrough) , with some enhancements below :
- 1. Styling method.
-    
+
+1.  Styling method.
+
     Now you can easily add styling on each syntax, e.g. add different color either in `strong`, `header`, or another md syntax. All default styles in this package is also already moved to new file `styles.js`.
- 2. Refactoring some codes to adopt ES6 style.
-    
+
+2.  Refactoring some codes to adopt ES6 style.
+
     Refactor index.js using ES6. :)
- 3. Support `Sublist`.
-    
-    In the previous library, you couldn't add sublist. It was not supported. But now, this feature already added here. Please follow the instruction above... 
- 4. Latest release: 
 
-    * add Proptypes Support, (1.0.1)
+3.  Support `Sublist`.
 
-    * Fix deprecated View.proptypes and update Readme (1.0.3)
-    
-    * Upgrade dependency, lodash, avoid vulnerabilities (1.1.0)
+    In the previous library, you couldn't add sublist. It was not supported. But now, this feature already added here. Please follow the instruction above...
 
-    * Fix performance issue, import only necessarry function from lodash (1.1.1)
+4.  Latest release:
 
-    * Finalize Blockquote feature (1.2.0)
+    - add Proptypes Support, (1.0.1)
 
-    * Update Docs (1.2.1)
+    - Fix deprecated View.proptypes and update Readme (1.0.3)
 
-    * Allow user to include plain text from variable using back tick (1.3.3)
+    - Upgrade dependency, lodash, avoid vulnerabilities (1.1.0)
 
-    * New feature, codeblock (1.4.0)
-    
-    * New feature, on link handler (1.4.3)
-    
-    * Bug fix, Strike through issue (1.4.4)
+    - Fix performance issue, import only necessarry function from lodash (1.1.1)
 
-    * Default Style for outer View, remove deprecated ComponentWillMount (1.5.0)
-    
-    * Allow user to replace default rules, update default font family for `codeBlock` on android [(v1.6.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.6.0)
+    - Finalize Blockquote feature (1.2.0)
 
-    * Update to use latest simple-markdown [(v1.7.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.7.0)
+    - Update Docs (1.2.1)
 
-    * Update to use latest simple-markdown [(v1.8.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.8.0)
-    
-    
+    - Allow user to include plain text from variable using back tick (1.3.3)
+
+    - New feature, codeblock (1.4.0)
+
+    - New feature, on link handler (1.4.3)
+
+    - Bug fix, Strike through issue (1.4.4)
+
+    - Default Style for outer View, remove deprecated ComponentWillMount (1.5.0)
+
+    - Allow user to replace default rules, update default font family for `codeBlock` on android [(v1.6.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.6.0)
+
+    - Update to use latest simple-markdown [(v1.7.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.7.0)
+
+    - Update to use latest simple-markdown [(v1.8.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.8.0)
 
 Happy Coding... ;)
