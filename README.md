@@ -250,17 +250,30 @@ const onLinkCallback = (url) => {
 This prop will accept string, It can be used to assign a prefix to image filenames
 
 ```
+<<<<<<< HEAD
 ...
+=======
+
+...
+
+>>>>>>> 1288f24b5bfbaedffad6aa12b3b4c9b8e7ff1aa9
 <Markdown
   styles={markdownStyle.collectiveMd}
   imagePrefix="https://example.com">
 {text}
 </Markdown>
+<<<<<<< HEAD
 ...
 
 ```
+=======
 
-*NOTE :* 
+...
+>>>>>>> 1288f24b5bfbaedffad6aa12b3b4c9b8e7ff1aa9
+
+```
+
+_NOTE :_
 _Email link (mailto) could be tested on real device only, it won't be able to test on Simulator as discuss in this [StackOverflow](https://stackoverflow.com/questions/44769710/opneurl-react-native-linking-call-mailto)_
 
 ## Thanks To
