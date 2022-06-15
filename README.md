@@ -249,27 +249,17 @@ const onLinkCallback = (url) => {
 
 This prop will accept string, It can be used to assign a prefix to image filenames
 
+
 ```
-<<<<<<< HEAD
-...
-=======
-
 ...
 
->>>>>>> 1288f24b5bfbaedffad6aa12b3b4c9b8e7ff1aa9
 <Markdown
   styles={markdownStyle.collectiveMd}
   imagePrefix="https://example.com">
 {text}
 </Markdown>
-<<<<<<< HEAD
-...
-
-```
-=======
 
 ...
->>>>>>> 1288f24b5bfbaedffad6aa12b3b4c9b8e7ff1aa9
 
 ```
 
