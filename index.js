@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, ViewPropTypes} from 'react-native';
 import {merge, isEqual, isArray} from 'lodash';
-import PropTypes from 'prop-types';
+import PropTypes from 'deprecated-react-native-prop-types';
 import SimpleMarkdown from 'simple-markdown';
 import styles from './styles';
 
