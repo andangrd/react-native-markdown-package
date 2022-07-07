@@ -9,8 +9,7 @@
   "dependencies": {
     "lodash": "^4.17.15",
     "react-native-lightbox": "^0.7.0",
-    "simple-markdown": "^0.7.1",
-    "deprecated-react-native-prop-types": "2.2.0"
+    "simple-markdown": "^0.7.1"
   },
   "repository": {
     "type": "git",

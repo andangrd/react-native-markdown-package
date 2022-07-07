@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {View} from 'react-native';
 import {merge, isEqual, isArray} from 'lodash';
-import PropTypes, {ViewPropTypes} from 'deprecated-react-native-prop-types';
 import SimpleMarkdown from 'simple-markdown';
 import styles from './styles';
 
@@ -54,23 +53,6 @@ class Markdown extends Component {
 
     return <View style={[styles.view, this.props.styles.view]}>{this.renderer(tree)}</View>
   }
-}
-
-Markdown.propTypes = {
-  enableLightBox: PropTypes.bool,
-  onLink: PropTypes.func,
-  onImageOpen: PropTypes.func,
-  onImageClose: PropTypes.func,
-  onLoad: PropTypes.func,
-  styles: PropTypes.shape({
-    view: ViewPropTypes.style,
-  }),
-  rules: PropTypes.object,
-};
-
-Markdown.defaultProps = {
-  styles: styles,
-  rules: {}
 }
 
 export default Markdown;
