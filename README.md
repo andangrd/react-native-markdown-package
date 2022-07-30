@@ -299,6 +299,5 @@ This project was actually forked from [lwansbrough](https://github.com/lwansbrou
 
     * Update to use latest simple-markdown [(v1.8.0)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.8.0)
     
-    
+    * Remove deprecated `prop-types` from list of dependencies [(v1.8.2)](https://github.com/andangrd/react-native-markdown-package/releases/tag/v1.8.2)
 
-Happy Coding... ;)
