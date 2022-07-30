@@ -252,12 +252,7 @@ _Email link (mailto) could be tested on real device only, it won't be able to te
 
 ## Thanks To
 
-thanks to all contributors who help me to make this libary better:
-
-[![img](https://avatars1.githubusercontent.com/u/26213148?s=60&v=4)](https://github.com/andangrd/)
-[![img](https://avatars0.githubusercontent.com/u/16436270?s=60&v=4)](https://github.com/deadcoder0904)
-[![img](https://avatars1.githubusercontent.com/u/22953807?s=60&v=4)](https://github.com/andangr)
-[![img](https://avatars0.githubusercontent.com/u/8979249?s=60&v=4)](https://github.com/ntcong91)
+thanks to all contributors who help me to make this libary better
 
 This project was actually forked from [lwansbrough](https://github.com/lwansbrough) , with some enhancements below :
  1. Styling method.
