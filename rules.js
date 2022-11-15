@@ -195,10 +195,10 @@ module.exports = function (styles, opts = {}) {
           state.withinList = false;
           
           if (node.ordered) {
-            bullet = React.createElement(Text, {key: 0, style: styles.listItemNumber}, (numberIndex) + '. ');
+            bullet = React.createElement(Text, {key: 0, style: [styles.text, styles.listItemNumber]}, (numberIndex) + '. ');
           }
           else {
-            bullet = React.createElement(Text, {key: 0, style: styles.listItemBullet}, '\u2022 ');
+            bullet = React.createElement(Text, {key: 0, style: [styles.text, styles.listItemBullet]}, '\u2022 ');
           }
 
           if (item.length > 1) {
@@ -241,10 +241,10 @@ module.exports = function (styles, opts = {}) {
         var items = map(node.items, function (item, i) {
           var bullet;
           if (node.ordered) {
-            bullet = React.createElement(Text, {key: 0, style: styles.listItemNumber}, (i + 1) + '. ');
+            bullet = React.createElement(Text, {key: 0, style: [styles.text, styles.listItemNumber]}, (i + 1) + '. ');
           }
           else {
-            bullet = React.createElement(Text, {key: 0, style: styles.listItemBullet}, '\u2022 ');
+            bullet = React.createElement(Text, {key: 0, style: [styles.text, styles.listItemBullet]}, '\u2022 ');
           }
 
           var content = output(item, state);
