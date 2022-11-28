@@ -105,7 +105,7 @@ export default StyleSheet.create({
     lineHeight: 20,
   },
   listItemNumber: {
-    fontWeight: 'bold',
+    fontWeight: 'normal', // unnecessary 'normal' - just keeping the style name documented
   },
   listRow: {
     flexDirection: 'row',
