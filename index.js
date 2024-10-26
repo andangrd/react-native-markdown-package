@@ -51,7 +51,7 @@ class Markdown extends Component {
 
     const tree = this.parse(child);
 
-    return <View style={[styles.view, this.props.styles.view]}>{this.renderer(tree)}</View>
+    return <View style={[styles.view, this.props.styles]}>{this.renderer(tree)}</View>
   }
 }
 
